@@ -1,0 +1,28 @@
+{
+  "name": "typescript-template",
+  "version": "1.0.0",
+  "description": "A template for my Typescript projects",
+  "main": "dist/index.js",
+  "repository": "https://github.com/cfanoulis/typescript-template.git",
+  "author": "Charalampos Fanoulis <charalampos.fanoulis@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.33.0",
+    "@typescript-eslint/parser": "^2.33.0",
+    "eslint": "^6.0.0",
+    "eslint-config-xo": "^0.29.1",
+    "eslint-config-xo-typescript": "^0.29.0",
+    "rimraf": "^3.0.2",
+    "typescript": "^3.9.2"
+  },
+  "scripts": {
+    "lint": "eslint --ext ts src",
+    "lint:fix": "yarn lint --fix",
+    "build": "tsc -p .",
+    "build:clean": "rimraf dist && yarn build",
+    "clear": "yarn cache clean && rimraf node_modules && rimraf yarn.lock && rimraf dist",
+    "clear:fast": "rimraf node_modules && rimraf yarn.lock && rimraf dist"
+  }
+}
