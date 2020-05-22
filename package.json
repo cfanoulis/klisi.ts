@@ -1,13 +1,11 @@
 {
-  "name": "typescript-template",
+  "name": "@enclasse/ouzo",
   "version": "1.0.0",
-  "description": "A template for my Typescript projects",
+  "description": "Utilities for working with greek names",
   "main": "dist/index.js",
   "repository": "https://github.com/cfanoulis/typescript-template.git",
   "author": "Charalampos Fanoulis <charalampos.fanoulis@gmail.com>",
   "license": "MIT",
-  "private": true,
-  "dependencies": {},
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.33.0",
     "@typescript-eslint/parser": "^2.33.0",
