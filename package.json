@@ -7,12 +7,18 @@
   "author": "Charalampos Fanoulis <charalampos.fanoulis@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@jest/globals": "^26.0.1",
+    "@types/jest": "^25.2.3",
     "@typescript-eslint/eslint-plugin": "^2.33.0",
     "@typescript-eslint/parser": "^2.33.0",
     "eslint": "^6.0.0",
     "eslint-config-xo": "^0.29.1",
     "eslint-config-xo-typescript": "^0.29.0",
+    "jest": "^26.0.1",
+    "jest-circus": "^26.0.1",
     "rimraf": "^3.0.2",
+    "ts-jest": "^26.0.0",
+    "typedoc": "^0.17.7",
     "typescript": "^3.9.2"
   },
   "scripts": {
@@ -22,5 +28,9 @@
     "build:clean": "rimraf dist && yarn build",
     "clear": "yarn cache clean && rimraf node_modules && rimraf yarn.lock && rimraf dist",
     "clear:fast": "rimraf node_modules && rimraf yarn.lock && rimraf dist"
+  },
+  "resolutions": {
+    "jest-environment-jsdom": "https://registry.yarnpkg.com/@favware/skip-dependency/-/skip-dependency-1.0.2.tgz",
+    "jest-jasmine2": "https://registry.yarnpkg.com/@favware/skip-dependency/-/skip-dependency-1.0.2.tgz"
   }
 }

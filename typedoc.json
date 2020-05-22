@@ -1,0 +1,9 @@
+{
+	"inputFiles": [
+		"./src/index.ts"
+	],
+    "mode": "file",
+	"out": "docs",
+	"excludeNotExported": true,
+	"stripInternal": true
+}
