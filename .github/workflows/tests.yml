@@ -31,6 +31,5 @@ jobs:
       run: yarn
     - name: Test
       run: yarn jest --coverage
-    - uses: actions/upload-artifact@v1
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v1
