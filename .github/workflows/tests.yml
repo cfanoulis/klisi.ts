@@ -29,10 +29,8 @@ jobs:
         key: ${{ runner.os }}-${{ matrix.node_version }}-${{ hashFiles(matrix.os == 'windows-latest' && '**\yarn.lock' || '**/yarn.lock') }}
     - name: Install Dependencies
       run: yarn
-    - name: Build Project
-      run: yarn build
     - name: Test
-      run: yarn coverage
+      run: yarn jest --coverage
     - uses: actions/upload-artifact@v1
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v1
