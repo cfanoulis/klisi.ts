@@ -17,9 +17,9 @@ export function getEnding(name: string) {
  */
 export function isParoxytono(name: string) {
 	function aux(countL: number, vowels: number): unknown {
-		if (countL >= name.length) {
-			return false;
-		}
+		// If (countL >= name.length) {
+		// 	return false;
+		// }
 
 		let letter = name[name.length - countL - 1].toLocaleLowerCase();
 		if (vowelsT.includes(letter)) {
@@ -34,4 +34,10 @@ export function isParoxytono(name: string) {
 	}
 
 	return aux(2, 1);
+}
+
+export const enum LexicalGender {
+	NONE,
+	MALE,
+	FEMALE
 }
