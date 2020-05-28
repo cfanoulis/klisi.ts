@@ -9,8 +9,7 @@ import {getEnding} from './util';
  */
 export function getGender(name: string) {
 	name = name.toLocaleLowerCase();
-	let suffix2 = (name.length > 2) ? name.substring(name.length - 2) : name;
-	let suffix3 = (name.length > 3) ? name.substring(name.length - 3) : name;
+
 	if (name === ('ραχήλ') || name === ('ραχηλ') ||
 		name === ('ολυμπιάς') || name === ('ολυμπιας') ||
 		name === ('ναϊάς') || name === ('ναϊας') ||
@@ -21,6 +20,22 @@ export function getGender(name: string) {
 	) {
 		return 'FEMALE';
 	}
+
+	const suffix2 = (name.length > 2) ? name.substring(name.length - 2) : name;
+
+	if (suffix2 === ('ις') ||
+		suffix2 === ('ίς') ||
+		suffix2 === ('ΐς') ||
+		suffix2 === ('ϊς')) {
+		const string1 = name.split('').map(c => c.normalize('NFD').charAt(0)).join('');
+		if (maleIsNormalized.includes(string1)) {
+			return 'MALE';
+		}
+
+		return 'FEMALE';
+	}
+
+	const suffix3 = (name.length > 3) ? name.substring(name.length - 3) : name;
 
 	if (suffix2 === ('ος') ||
 		suffix2 === ('ός') ||
@@ -34,12 +49,8 @@ export function getGender(name: string) {
 		suffix2 === ('ηλ') ||
 		suffix2 === ('ήφ') ||
 		suffix2 === ('ηφ') ||
-		suffix3 === ('ειμ') ||
-		suffix3 === ('είμ') ||
 		suffix2 === ('ων') ||
 		suffix2 === ('ών') ||
-		suffix3 === ('εύς') ||
-		suffix3 === ('ευς') ||
 		suffix2 === ('ωρ') ||
 		suffix2 === ('ώρ') ||
 		suffix2 === ('αμ') ||
@@ -50,51 +61,43 @@ export function getGender(name: string) {
 		suffix2 === ('ώς') ||
 		suffix2 === ('ιν') ||
 		suffix2 === ('ίν') ||
-		suffix3 === ('αιμ') ||
-		suffix3 === ('αίμ') ||
 		suffix2 === ('ώβ') ||
 		suffix2 === ('ωβ') ||
-		suffix3 === ('ουμ') ||
-		suffix3 === ('ούμ') ||
-		suffix3 === ('ους') ||
-		suffix3 === ('ούς') ||
 		suffix2 === ('ακ') ||
 		suffix2 === ('άκ') ||
 		suffix2 === ('ωτ') ||
 		suffix2 === ('ώτ') ||
 		suffix2 === ('οτ') ||
-		suffix2 === ('ότ')) {
+		suffix2 === ('ότ') ||
+		suffix3 === ('ειμ') ||
+		suffix3 === ('είμ') ||
+		suffix3 === ('ουμ') ||
+		suffix3 === ('ούμ') ||
+		suffix3 === ('ους') ||
+		suffix3 === ('ούς') ||
+		suffix3 === ('αιμ') ||
+		suffix3 === ('αίμ') ||
+		suffix3 === ('εύς') ||
+		suffix3 === ('ευς')) {
 		return 'MALE';
-	}
-
-	if (suffix2 === ('ις') ||
-		suffix2 === ('ίς') ||
-		suffix2 === ('ΐς') ||
-		suffix2 === ('ϊς')) {
-		let string1 = name.split('').map(c => c.normalize('NFD').charAt(0)).join('');
-		if (maleIsNormalized.includes(string1)) {
-			return 'MALE';
-		}
-
-		return 'FEMALE';
 	}
 
 	let suffix1 = (name.length > 1) ? name.substring(name.length - 1) : name;
 	if (suffix1 === ('ω') ||
-			suffix1 === ('ώ') ||
-			suffix1 === ('η') ||
-			suffix1 === ('ή') ||
-			suffix1 === ('α') ||
-			suffix1 === ('ά') ||
-			suffix2 === ('ου') ||
-			suffix2 === ('ού') ||
-			suffix2 === ('ετ') ||
-			suffix2 === ('έτ') ||
-			suffix3 === ('ιάς') ||
-			suffix3 === ('ιας') ||
-			suffix2 === ('δα') ||
-			suffix2 === ('ηρ') ||
-			suffix2 === ('ήρ')) {
+		suffix1 === ('ώ') ||
+		suffix1 === ('η') ||
+		suffix1 === ('ή') ||
+		suffix1 === ('α') ||
+		suffix1 === ('ά') ||
+		suffix2 === ('ου') ||
+		suffix2 === ('ού') ||
+		suffix2 === ('ετ') ||
+		suffix2 === ('έτ') ||
+		suffix2 === ('δα') ||
+		suffix2 === ('ηρ') ||
+		suffix2 === ('ήρ') ||
+		suffix3 === ('ιάς') ||
+		suffix3 === ('ιας')) {
 		return 'FEMALE';
 	}
 
@@ -113,11 +116,11 @@ export function getVocative(name: string) {
 	let suffix5 = (name.length > 5) ? name.substring(name.length - 5) : name;
 	if (gender === 'MALE' &&
 		(suffix2 === ('ης') ||
-			suffix2 === ('ής') ||
-			suffix2 === ('ας') ||
-			suffix2 === ('άς') ||
-			suffix2 === ('ις') ||
-			suffix2 === ('ίς'))) {
+		suffix2 === ('ής') ||
+		suffix2 === ('ας') ||
+		suffix2 === ('άς') ||
+		suffix2 === ('ις') ||
+		suffix2 === ('ίς'))) {
 		return name.substring(0, name.length - 1);
 	}
 
@@ -171,7 +174,21 @@ export function getVocative(name: string) {
 export function getCausative(name: string) {
 	const gender = getGender(name);
 	const suffix2 = (name.length > 2) ? name.substring(name.length - 2) : name;
+
+	if (gender === 'MALE' && suffix2 === ('ωρ')) {
+		return name.substring(0, name.length - 2).concat('α');
+	}
+
 	const suffix3 = (name.length > 3) ? name.substring(name.length - 3) : name;
+
+	if (gender === 'MALE' && (suffix2 === ('ως') ||
+		suffix3 === ('εύς') ||
+		suffix3 === ('ευς') ||
+		suffix3 === ('ούς') ||
+		suffix3 === ('ους'))) {
+		return name.substring(0, name.length - 1);
+	}
+
 	const suffix4 = (name.length > 4) ? name.substring(name.length - 4) : name;
 	const suffix5 = (name.length > 5) ? name.substring(name.length - 5) : name;
 	if (gender === 'MALE' && (
@@ -183,10 +200,10 @@ export function getCausative(name: string) {
 		suffix2 === ('άς') ||
 		suffix2 === ('ις') ||
 		suffix2 === ('ίς') ||
-		suffix5 === ('τίνος') ||
-		suffix5 === ('τινος') ||
 		suffix4 === ('αίος') ||
 		suffix4 === ('αιος') ||
+		suffix5 === ('τίνος') ||
+		suffix5 === ('τινος') ||
 		suffix5 === ('φόρος') ||
 		suffix5 === ('φορος') ||
 		suffix5 === ('άρδος'))) {
@@ -195,18 +212,6 @@ export function getCausative(name: string) {
 
 	if (gender === 'FEMALE' && suffix2 === ('ις')) {
 		return name.substring(0, name.length - 1) + 'ή';
-	}
-
-	if (gender === 'MALE' && (suffix2 === ('ως') ||
-		suffix3 === ('εύς') ||
-		suffix3 === ('ευς') ||
-		suffix3 === ('ούς') ||
-		suffix3 === ('ους'))) {
-		return name.substring(0, name.length - 1);
-	}
-
-	if (gender === 'MALE' && suffix2 === ('ωρ')) {
-		return name.substring(0, name.length - 2).concat('α');
 	}
 
 	return name;
