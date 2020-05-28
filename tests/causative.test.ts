@@ -2,18 +2,40 @@
 
 import {getCausative} from '../src';
 
-test('should return proper causative for common male names', () => {
-	const data = [
-		['Γιώργος', 'Γιώργο'],
-		['Ιωάννης', 'Ιωάννη'],
-		['Μιχάλης', 'Μιχάλη']
-	];
-
-	for (const [name, caus] of data) {
-		expect(getCausative(name)).toBe(caus);
+test.each([
+	['Γιώργος', 'Γιώργο'],
+	['Ιωάννης', 'Ιωάννη'],
+	['Μιχάλης', 'Μιχάλη'],
+	['Παναγής', 'Παναγή'],
+	['Κώστας', 'Κώστα'],
+	['Παρασκευάς', 'Παρασκευά'],
+	['Άδωνις', 'Άδωνι'],
+	['Αδωνίς', 'Αδωνί'],
+	['Κωσταντίνος', 'Κωσταντίνο'],
+	['Κωσταντινος', 'Κωσταντινο'],
+	['Αρχαίος', 'Αρχαίο'],
+	['Αρχαιος', 'Αρχαιο'],
+	['Χριστόφορος', 'Χριστόφορο'],
+	['Χριστοφορος', 'Χριστοφορο'],
+	['Εδουάρδος', 'Εδουάρδο'],
+	['Αριστόνους', 'Αριστόνου'],
+	['Αετιδεύς', 'Αετιδεύ'],
+	['Ζευς', 'Ζευ'],
+	['Βίκτωρ', 'Βίκτωρα'],
+	['Σχολείο', 'Σχολείο']
+])(
+	'male causative for (%s)',
+	(input, expected) => {
+		expect(getCausative(input)).toBe(expected);
 	}
-});
+);
 
-test('should return proper causative for common female name', () => {
-	expect(getCausative('Μαρία')).toBe('Μαρία');
-});
+test.each([
+	['Μαρία', 'Μαρία'],
+	['Άρτεμις', 'Άρτεμη']
+])(
+	'female causative for (%s)',
+	(name, expected) => {
+		expect(getCausative(name)).toBe(expected);
+	}
+);
