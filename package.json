@@ -19,7 +19,8 @@
     "rimraf": "^3.0.2",
     "ts-jest": "^26.0.0",
     "typedoc": "^0.17.7",
-    "typescript": "^3.9.2"
+    "typescript": "^3.9.2",
+    "weak-napi": "^2.0.1"
   },
   "scripts": {
     "lint": "eslint --ext ts src tests",
