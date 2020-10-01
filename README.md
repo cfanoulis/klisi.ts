@@ -2,7 +2,7 @@
 
 [![Follow the maintainer on Twitter](https://img.shields.io/twitter/follow/cfanoulis?label=Follow%20@cfanoulis&logo=twitter&colorB=1DA1F2&style=flat-square)](https://twitter.com/cfanoulis/follow)
 
-A utility package for working with grek names (and not only)
+A utility package for working with greek names (and not only)
 
 # Installation
 ```bash
