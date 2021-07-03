@@ -58,3 +58,7 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 *.lnk
+dist/
+.build.tsinfo
+tests/*.js*
+tests/*.d.ts

@@ -1,7 +1,5 @@
 {
-	"inputFiles": ["./src/index.ts"],
-	"mode": "file",
+	"entryPoints": ["./src/index.ts"],
 	"out": "docs",
-	"excludeNotExported": true,
-	"stripInternal": true
+	"excludeInternal": true
 }
