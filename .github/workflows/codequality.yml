@@ -47,4 +47,4 @@ jobs:
       - name: Install Dependencies
         run: yarn
       - name: Run TSC
-        uses: yarn build 
+        uses: yarn build
