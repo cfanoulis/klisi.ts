@@ -1,10 +1,10 @@
 {
-	"name": "@enclasse/ouzo",
-	"version": "1.0.0",
+	"name": "klisi.ts",
+	"version": "0.0.1",
 	"description": "Utilities for working with greek names",
 	"main": "dist/index.js",
-	"repository": "https://github.com/cfanoulis/typescript-template.git",
-	"author": "Charalampos Fanoulis <charalampos.fanoulis@gmail.com>",
+	"repository": "https://github.com/cfanoulis/klisi.ts.git",
+	"author": "Charalampos Fanoulis <yo@fanoulis.dev>",
 	"license": "MIT",
 	"devDependencies": {
 		"@jest/globals": "^27.0.6",
@@ -36,12 +36,6 @@
 	"resolutions": {
 		"jest-environment-jsdom": "https://registry.yarnpkg.com/@favware/skip-dependency/-/skip-dependency-1.0.2.tgz",
 		"jest-jasmine2": "https://registry.yarnpkg.com/@favware/skip-dependency/-/skip-dependency-1.0.2.tgz"
-	},
-	"publishConfig": {
-		"access": "public"
-	},
-	"dependencies": {
-		"jest-environment-jsdom": "https://registry.yarnpkg.com/@favware/skip-dependency/-/skip-dependency-1.0.2.tgz"
 	},
 	"prettier": "@sapphire/prettier-config"
 }
