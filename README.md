@@ -5,6 +5,7 @@
 A utility package for working with grek names (and not only)
 
 # Installation
+
 ```bash
 # Add the GPR scope
 echo @enclasse:registry=https://npm.pkg.github.com > .npmrc
@@ -21,12 +22,15 @@ pnpm add @enclasse/ouzo
 ```
 
 ## Contributing
+
 Pull requests are issues are always welcome! Please use the issue tracker for bug requests and feature submissions
 
 ## Legal
+
 Copyright 2019-Present © [The Enclasse project](https://github.com/enclasse). Distributed under the [MIT licence](LICENCE).
 
 ## Credits and honorable mentions
+
 This project is based on `el-name-tools` and `greek-utils`. We thank [Dimitrios Souflis](https://github.com/dsouflis) and [Vassilis Barzokas](https://github.com/vbarzokas) for their work and implementations.
 
 > Maintained by [Charalampos Fanoulis](https://github.com/cfanoulis). [Twitter](https://twitter.com/cfanoulis)

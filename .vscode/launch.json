@@ -1,20 +1,18 @@
 {
-    "version":"0.2.0",
-    "configurations":[
-        {
-            "type":"node",
-            "request":"launch",
-            "name":"RunDebugger",
-            "args":[
-                "${workspaceFolder}/src/index.js"
-            ],
-            "protocol":"inspector",
-            "internalConsoleOptions":"openOnSessionStart",
-            "env":{
-                "NODE_ENV":"development"
-            },
-            "console":"internalConsole",
-            "outputCapture":"std"
-        }
-    ]
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "node",
+			"request": "launch",
+			"name": "RunDebugger",
+			"args": ["${workspaceFolder}/src/index.js"],
+			"protocol": "inspector",
+			"internalConsoleOptions": "openOnSessionStart",
+			"env": {
+				"NODE_ENV": "development"
+			},
+			"console": "internalConsole",
+			"outputCapture": "std"
+		}
+	]
 }

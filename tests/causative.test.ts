@@ -1,6 +1,6 @@
 /* global test, expect */
 
-import {getCausative} from '../src';
+import { getCausative } from '../src';
 
 test.each([
 	['Γιώργος', 'Γιώργο'],
@@ -23,19 +23,13 @@ test.each([
 	['Ζευς', 'Ζευ'],
 	['Βίκτωρ', 'Βίκτωρα'],
 	['Σχολείο', 'Σχολείο']
-])(
-	'male causative for (%s)',
-	(input, expected) => {
-		expect(getCausative(input)).toBe(expected);
-	}
-);
+])('male causative for (%s)', (input, expected) => {
+	expect(getCausative(input)).toBe(expected);
+});
 
 test.each([
 	['Μαρία', 'Μαρία'],
 	['Άρτεμις', 'Άρτεμη']
-])(
-	'female causative for (%s)',
-	(name, expected) => {
-		expect(getCausative(name)).toBe(expected);
-	}
-);
+])('female causative for (%s)', (name, expected) => {
+	expect(getCausative(name)).toBe(expected);
+});

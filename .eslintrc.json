@@ -1,14 +1,11 @@
 {
-    "env": {
-        "es6": true,
-        "node": true
-    },
-    "extends": [
-        "xo",
-        "xo-typescript"
-    ],
-    "globals": {
-        "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
-    }
+	"env": {
+		"es6": true,
+		"node": true
+	},
+	"extends": ["@sapphire"],
+	"globals": {
+		"Atomics": "readonly",
+		"SharedArrayBuffer": "readonly"
+	}
 }

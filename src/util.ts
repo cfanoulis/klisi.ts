@@ -1,10 +1,10 @@
-import {vowelsT, vowelsWT} from './constants';
+import { vowelsT, vowelsWT } from './constants';
 
 /**
  * @internal
  */
 export function getEnding(name: string) {
-	let paroxytono = isParoxytono(name);
+	const paroxytono = isParoxytono(name);
 	if (paroxytono) {
 		return 'ο';
 	}
@@ -21,7 +21,7 @@ export function isParoxytono(name: string) {
 		// 	return false;
 		// }
 
-		let letter = name[name.length - countL - 1].toLocaleLowerCase();
+		const letter = name[name.length - countL - 1].toLocaleLowerCase();
 		if (vowelsT.includes(letter)) {
 			return vowels === 1;
 		}

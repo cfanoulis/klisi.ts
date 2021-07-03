@@ -1,42 +1,47 @@
 {
-  "name": "@enclasse/ouzo",
-  "version": "1.0.0",
-  "description": "Utilities for working with greek names",
-  "main": "dist/index.js",
-  "repository": "https://github.com/cfanoulis/typescript-template.git",
-  "author": "Charalampos Fanoulis <charalampos.fanoulis@gmail.com>",
-  "license": "MIT",
-  "devDependencies": {
-    "@jest/globals": "^26.0.1",
-    "@types/jest": "^26.0.5",
-    "@typescript-eslint/eslint-plugin": "^3.0.1",
-    "@typescript-eslint/parser": "^3.0.1",
-    "eslint": "^7.1.0",
-    "eslint-config-xo": "^0.29.1",
-    "eslint-config-xo-typescript": "^0.29.0",
-    "jest": "^26.0.1",
-    "jest-circus": "^26.0.1",
-    "rimraf": "^3.0.2",
-    "ts-jest": "^26.0.0",
-    "typedoc": "^0.17.7",
-    "typescript": "^3.9.2",
-    "weak-napi": "^2.0.1"
-  },
-  "scripts": {
-    "lint": "eslint --ext ts src tests",
-    "lint:fix": "yarn lint --fix",
-    "build": "tsc -p .",
-    "build:clean": "rimraf dist && yarn build",
-    "clear": "yarn cache clean && rimraf node_modules && rimraf yarn.lock && rimraf dist",
-    "clear:fast": "rimraf node_modules && rimraf yarn.lock && rimraf dist",
-    "test": "jest",
-    "test:coverage": "yarn test --coverage"
-  },
-  "resolutions": {
-    "jest-environment-jsdom": "https://registry.yarnpkg.com/@favware/skip-dependency/-/skip-dependency-1.0.2.tgz",
-    "jest-jasmine2": "https://registry.yarnpkg.com/@favware/skip-dependency/-/skip-dependency-1.0.2.tgz"
-  },
-  "publishConfig": {
-    "access": "public"
-  }
+	"name": "@enclasse/ouzo",
+	"version": "1.0.0",
+	"description": "Utilities for working with greek names",
+	"main": "dist/index.js",
+	"repository": "https://github.com/cfanoulis/typescript-template.git",
+	"author": "Charalampos Fanoulis <charalampos.fanoulis@gmail.com>",
+	"license": "MIT",
+	"devDependencies": {
+		"@jest/globals": "^27.0.6",
+		"@sapphire/eslint-config": "^3.2.1",
+		"@sapphire/prettier-config": "^1.1.6",
+		"@types/jest": "^26.0.23",
+		"@typescript-eslint/eslint-plugin": "^4.28.1",
+		"@typescript-eslint/parser": "^4.28.1",
+		"eslint": "^7.30.0",
+		"jest": "^27.0.6",
+		"jest-circus": "^27.0.6",
+		"prettier": "^2.3.2",
+		"rimraf": "^3.0.2",
+		"ts-jest": "^27.0.3",
+		"typedoc": "^0.21.2",
+		"typescript": "^4.3.5",
+		"weak-napi": "^2.0.2"
+	},
+	"scripts": {
+		"lint": "eslint --ext ts src tests",
+		"lint:fix": "yarn lint --fix",
+		"build": "tsc -p .",
+		"build:clean": "rimraf dist && yarn build",
+		"clear": "yarn cache clean && rimraf node_modules && rimraf yarn.lock && rimraf dist",
+		"clear:fast": "rimraf node_modules && rimraf yarn.lock && rimraf dist",
+		"test": "jest",
+		"test:coverage": "yarn test --coverage"
+	},
+	"resolutions": {
+		"jest-environment-jsdom": "https://registry.yarnpkg.com/@favware/skip-dependency/-/skip-dependency-1.0.2.tgz",
+		"jest-jasmine2": "https://registry.yarnpkg.com/@favware/skip-dependency/-/skip-dependency-1.0.2.tgz"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"dependencies": {
+		"jest-environment-jsdom": "https://registry.yarnpkg.com/@favware/skip-dependency/-/skip-dependency-1.0.2.tgz"
+	},
+	"prettier": "@sapphire/prettier-config"
 }

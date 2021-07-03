@@ -1,6 +1,6 @@
-import {test, expect} from '@jest/globals';
-import {LexicalGender} from '../src/util';
-import {getLexicalGender} from '../src';
+import { test, expect } from '@jest/globals';
+import { LexicalGender } from '../src/util';
+import { getLexicalGender } from '../src';
 
 test.each([
 	['Γιώργος', LexicalGender.MALE],
@@ -38,10 +38,6 @@ test.each([
 	['Εσθηρ', LexicalGender.FEMALE],
 	['Τριανταφυλλιάς', LexicalGender.FEMALE],
 	['Σχολείο', LexicalGender.NONE]
-
-])(
-	'get gender for %s',
-	(name, expected) => {
-		expect(getLexicalGender(name)).toBe(expected);
-	}
-);
+])('get gender for %s', (name, expected) => {
+	expect(getLexicalGender(name)).toBe(expected);
+});

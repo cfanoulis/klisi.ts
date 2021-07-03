@@ -1,5 +1,5 @@
-import {test, expect} from '@jest/globals';
-import {getVocative} from '../src';
+import { test, expect } from '@jest/globals';
+import { getVocative } from '../src';
 
 test.each([
 	['Γιώργος', 'Γιώργο'],
@@ -23,19 +23,13 @@ test.each([
 	['Βίκτωρ', 'Βίκτορ'],
 	['Σαθρός', 'Σαθρέ'],
 	['Χαράλαμπος', 'Χαράλαμπε']
-])(
-	'male vocative for %s',
-	(input, expected) => {
-		expect(getVocative(input)).toBe(expected);
-	}
-);
+])('male vocative for %s', (input, expected) => {
+	expect(getVocative(input)).toBe(expected);
+});
 
 test.each([
 	['Μαρία', 'Μαρία'],
 	['Άρτεμις', 'Άρτεμι']
-])(
-	'female vocative for %s',
-	(name, expected) => {
-		expect(getVocative(name)).toBe(expected);
-	}
-);
+])('female vocative for %s', (name, expected) => {
+	expect(getVocative(name)).toBe(expected);
+});
