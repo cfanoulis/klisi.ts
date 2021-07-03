@@ -1,4 +1,4 @@
-This module includes inline code by the `el-name-tools` and `greek-utils`. Their licences can be found below:
+This module includes inline code from the `el-name-tools` and `greek-utils` packages. Their licences can be found below:
 
 el-name-tools: 
 	Copyright (c) 2019 Dimitrios Souflis.
